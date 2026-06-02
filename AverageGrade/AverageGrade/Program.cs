@@ -1,4 +1,6 @@
-﻿namespace AverageGrade
+﻿using System.Globalization;
+
+namespace AverageGrade
 {
     internal class Program
     {
@@ -15,7 +17,9 @@
 
             double average = (grade1 + grade2 + grade3) / 3;
 
-            Console.WriteLine($"A média final é {average:F1}.");
+            string value = average.ToString(CultureInfo.InvariantCulture);
+
+            Console.WriteLine($"A média final é {value:F1}.");
         }
     }
 }
