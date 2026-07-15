@@ -18,12 +18,32 @@
             Console.WriteLine("==================================");
             Console.WriteLine("      JOGO DA ADIVINHAÇÃO");
             Console.WriteLine("==================================");
-            Console.WriteLine("Dê o seu palpite de 1 a 100: ");
+            Console.WriteLine("Dê o seu palpite de 1 a 100");
 
             bool acertou = false;
 
-            while (acertou)
+            while (!acertou)
             {
+                Console.WriteLine("Digite um número: ");
+                int palpite = int.Parse(Console.ReadLine());
+
+                tentativas++;
+
+                if (palpite == numeroSecreto)
+                {
+                    Console.WriteLine("Parabéns!");
+                    Console.WriteLine($"O número secreto é {numeroSecreto}");
+                    Console.WriteLine($"Seu número de tentativas foi {tentativas}");
+                    acertou = true;
+                }
+                else if (palpite < numeroSecreto)
+                {
+                    Console.WriteLine("O número secreto é maior!");
+                }
+                else
+                {
+                    Console.WriteLine("O número secreto é menor!");
+                }
             }
         }
     }
